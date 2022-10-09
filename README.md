@@ -6,6 +6,7 @@ API that provides a report based on the number of passwords that were created an
 
 ## Summary 📒: 
 
+- [Get Started](#get-started-) 
 - [Concept](#concept-)
 - [Technologies](#technologies-)
 - [Routes](#routes-)
@@ -13,6 +14,30 @@ API that provides a report based on the number of passwords that were created an
     - [GET](#get-)
     - [DELETE](#delete-)
     - [PUT](#put-)
+
+
+### Get started 📃:
+
+### Install all the dependencies before start the API.
+
+```javascript
+npm install
+```
+or 
+```javascript
+yarn
+```
+#### The connection URL is in `.env.development` you should rename to `.env` for the project works correctly. With all done you can just start the API using: 
+
+```javascript
+npm start
+```
+or 
+```javascript
+yarn start
+```
+
+
 
 ### Concept 📝: 
 
