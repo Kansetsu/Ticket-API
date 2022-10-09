@@ -25,14 +25,14 @@ API that provides a report based on the number of passwords that were created an
 ### Now you have to install all the dependencies before start the API.
 
 ```javascript
-// You can use npm or yarn, be confortble.
+// You can use npm or yarn, be comfortable.
 
 npm install || yarn 
 ```
 #### * The connection URL is in `.env.development` you should rename to `.env` for the project works correctly. With all done you can just start the API using: 
 
 ```javascript
-// You can use npm or yarn, be confortble.
+// You can use npm or yarn, be comfortable.
 
 npm start || yarn start
 ```
