@@ -1,0 +1,172 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2.0.0",
+    "title": "Ticket API",
+    "description": "API that provides a report based on the number of passwords that were created and the number of people attended.",
+    "contact": {
+      "email": "vinicius802010@gmail.com"
+    }
+  },
+  "host": "localhost:8000",
+  "basePath": "/ticket",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/registerReport": {
+      "post": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Register a new report in the database.",
+        "description": "This route is responsable for create a new report register in the database with the informations passed in the body of the requisition.",
+        "parameters": [
+          {
+            "name": "report data",
+            "in": "body",
+            "description": "Report data.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/report"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getAllReports": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Returns all reports.",
+        "description": "Returns all the reports registered in the database.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getReportsByDate": {
+      "get": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Get a report by date",
+        "description": "Get a report by date. If has more than one report with the same date, then only the first one will be returned.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that report was created.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/deleteReport": {
+      "delete": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Delete a report by date",
+        "description": "Delete a report searching by the date of creation.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that report was created.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/updateReport": {
+      "put": {
+        "tags": [
+          "Report"
+        ],
+        "summary": "Update any report information in the database.",
+        "description": "Update any report information in the database searching the especific report by date.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that report was created.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "updated data",
+            "in": "body",
+            "description": "Senha atualizada",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/report"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "report": {
+      "type": "object",
+      "properties": {
+        "reportDate": {
+          "type": "string",
+          "example": "2022/10/09"
+        },
+        "numberOfGeneratedPasswords": {
+          "type": "number",
+          "example": 10
+        },
+        "numberOfAttendedPasswords": {
+          "type": "number",
+          "example": 7
+        },
+        "generatedPriorityPasswords": {
+          "type": "number",
+          "example": 3
+        },
+        "generatedGeneralPasswords": {
+          "type": "number",
+          "example": 5
+        },
+        "generatedExamsPasswords": {
+          "type": "number",
+          "example": 2
+        }
+      }
+    }
+  }
+}
