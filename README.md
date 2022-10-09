@@ -18,23 +18,23 @@ API that provides a report based on the number of passwords that were created an
 
 ### Get started 📃:
 
-### Install all the dependencies before start the API.
+### You need the MongoDB installed in your machine. You can download the MongoDB Community Server [here!](https://www.mongodb.com/try/download/community2)
+![image](https://user-images.githubusercontent.com/48100276/194774128-fbdc1690-a4e8-45f1-975a-eb5fbd58b3ae.png)
+
+
+### Now you have to install all the dependencies before start the API.
 
 ```javascript
-npm install
+// You can use npm or yarn, be confortble.
+
+npm install || yarn 
 ```
-or 
-```javascript
-yarn
-```
-#### The connection URL is in `.env.development` you should rename to `.env` for the project works correctly. With all done you can just start the API using: 
+#### * The connection URL is in `.env.development` you should rename to `.env` for the project works correctly. With all done you can just start the API using: 
 
 ```javascript
-npm start
-```
-or 
-```javascript
-yarn start
+// You can use npm or yarn, be confortble.
+
+npm start || yarn start
 ```
 
 
