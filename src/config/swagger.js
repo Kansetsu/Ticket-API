@@ -1,7 +1,7 @@
 const swaggerAutogen = require("swagger-autogen")();
 const outputFile = "./doc/swagger_output.json";
 const controllerFile = [
-    './src/controller/report.controller.js'
+    './src/controller/report.controller.js', './src/controller/examsPassword.controller.js', './src/controller/generalPassword.controller.js', './src/controller/priorityPassword.controller.js'
 ];
 
 // Responsable to generate the swagger documentation in the swagger_output.json file.
@@ -21,13 +21,31 @@ const doc = {
     produces: ["application/json"],
     definitions: {
         report: {
-            reportDate: "2022/10/09",
+            // reportDate: "2022/10/09",
             numberOfGeneratedPasswords: 10,
             numberOfAttendedPasswords: 7,
             generatedPriorityPasswords: 3,
             generatedGeneralPasswords: 5,
             generatedExamsPasswords: 2
-        }
+        },
+        examsPassword: {
+            numberOfPassword: 1,
+            ticketWindow: '5',
+            dateOfAttendant: '09/11/2022',
+            typeOfPassword: 'SE',
+        },
+        generalPassword: {
+            numberOfPassword: 1,
+            ticketWindow: '5',
+            dateOfAttendant: '09/11/2022',
+            typeOfPassword: 'SG',
+        },
+        priorityPassword: {
+            numberOfPassword: 1,
+            ticketWindow: '5',
+            dateOfAttendant: '09/11/2022',
+            typeOfPassword: 'SP',
+        },
     },
 };
 

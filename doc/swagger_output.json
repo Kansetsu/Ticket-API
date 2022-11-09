@@ -136,16 +136,333 @@
           }
         }
       }
+    },
+    "/registerExamsPassword": {
+      "post": {
+        "tags": [
+          "Exams"
+        ],
+        "summary": "Register a new password in the database.",
+        "description": "This route is responsable for create a new exams passwors register in the database with the informations passed in the body of the requisition.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getAllExamsPassword": {
+      "get": {
+        "tags": [
+          "Exams"
+        ],
+        "summary": "Returns all passwords.",
+        "description": "Returns all the exams password registered in the database.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getExamsPasswordByDate": {
+      "get": {
+        "tags": [
+          "Exams"
+        ],
+        "summary": "Get a exams password by date",
+        "description": "Get a exams password by date. If has more than one exams password with the same date, then only the first one will be returned.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that exams password was created.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/deleteExamsPassword": {
+      "delete": {
+        "tags": [
+          "Exams"
+        ],
+        "summary": "Delete a exams password by date",
+        "description": "Delete a exams password searching by the date of creation.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that exams password was created.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/updateExamsPassword": {
+      "put": {
+        "tags": [
+          "Exams"
+        ],
+        "summary": "Update any exams password information in the database.",
+        "description": "Update any exams information in the database searching the especific report by date.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that exans information was created.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "updated data",
+            "in": "body",
+            "description": "Data to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/examsPassword"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/registerGeneralPassword": {
+      "post": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Register a new password in the database.",
+        "description": "This route is responsable for create a new general passwors register in the database with the informations passed in the body of the requisition.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getAllGeneralPassword": {
+      "get": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Returns all passwords.",
+        "description": "Returns all the general password registered in the database.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getGeneralPasswordByDate": {
+      "get": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Get a general password by date",
+        "description": "Get a general password by date. If has more than one general password with the same date, then only the first one will be returned.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that general password was created.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/deleteGeneralPassword": {
+      "delete": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Delete a general password by date",
+        "description": "Delete a general password searching by the date of creation.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that general password was created.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/updateGeneralPassword": {
+      "put": {
+        "tags": [
+          "General"
+        ],
+        "summary": "Update any general password information in the database.",
+        "description": "Update any general information in the database searching the especific report by date.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that exans information was created.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "updated data",
+            "in": "body",
+            "description": "Data to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/generalPassword"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/registerPriorityPassword": {
+      "post": {
+        "tags": [
+          "Priority"
+        ],
+        "summary": "Register a new password in the database.",
+        "description": "This route is responsable for create a new priority passwors register in the database with the informations passed in the body of the requisition.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getAllPriorityPassword": {
+      "get": {
+        "tags": [
+          "Priority"
+        ],
+        "summary": "Returns all passwords.",
+        "description": "Returns all the priority password registered in the database.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/getPriorityPasswordByDate": {
+      "get": {
+        "tags": [
+          "Priority"
+        ],
+        "summary": "Get a priority password by date",
+        "description": "Get a priority password by date. If has more than one Priority password with the same date, then only the first one will be returned.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that priority password was created.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/deletePriorityPassword": {
+      "delete": {
+        "tags": [
+          "Priority"
+        ],
+        "summary": "Delete a priority password by date",
+        "description": "Delete a priority password searching by the date of creation.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that priority password was created.",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/updatePriorityPassword": {
+      "put": {
+        "tags": [
+          "Priority"
+        ],
+        "summary": "Update any priority password information in the database.",
+        "description": "Update any priority information in the database searching the especific report by date.",
+        "parameters": [
+          {
+            "name": "date",
+            "description": "Date that exans information was created.",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "updated data",
+            "in": "body",
+            "description": "Data to update",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/priorityPassword"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "definitions": {
     "report": {
       "type": "object",
       "properties": {
-        "reportDate": {
-          "type": "string",
-          "example": "2022/10/09"
-        },
         "numberOfGeneratedPasswords": {
           "type": "number",
           "example": 10
@@ -165,6 +482,69 @@
         "generatedExamsPasswords": {
           "type": "number",
           "example": 2
+        }
+      }
+    },
+    "examsPassword": {
+      "type": "object",
+      "properties": {
+        "numberOfPassword": {
+          "type": "number",
+          "example": 1
+        },
+        "ticketWindow": {
+          "type": "string",
+          "example": "5"
+        },
+        "dateOfAttendant": {
+          "type": "string",
+          "example": "09/11/2022"
+        },
+        "typeOfPassword": {
+          "type": "string",
+          "example": "SE"
+        }
+      }
+    },
+    "generalPassword": {
+      "type": "object",
+      "properties": {
+        "numberOfPassword": {
+          "type": "number",
+          "example": 1
+        },
+        "ticketWindow": {
+          "type": "string",
+          "example": "5"
+        },
+        "dateOfAttendant": {
+          "type": "string",
+          "example": "09/11/2022"
+        },
+        "typeOfPassword": {
+          "type": "string",
+          "example": "SG"
+        }
+      }
+    },
+    "priorityPassword": {
+      "type": "object",
+      "properties": {
+        "numberOfPassword": {
+          "type": "number",
+          "example": 1
+        },
+        "ticketWindow": {
+          "type": "string",
+          "example": "5"
+        },
+        "dateOfAttendant": {
+          "type": "string",
+          "example": "09/11/2022"
+        },
+        "typeOfPassword": {
+          "type": "string",
+          "example": "SP"
         }
       }
     }

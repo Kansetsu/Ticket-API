@@ -3,10 +3,12 @@ const reportModel = require('../schema/report.schema');
 const reportService = {
     registerReport: (data) => {
         return reportModel.create(data);
+
     },
 
     getAllReports: () => {
         return reportModel.find();
+
     },
 
     getReportByDate: (date) => {

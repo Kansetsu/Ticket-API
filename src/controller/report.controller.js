@@ -38,17 +38,17 @@ controller.get('/getReportsByDate', async (req, res) => {
         console.log('An error ocourred, sorry!', err);
     }));
 });
-controller.delete('/deleteReport', (req, res) => {
+controller.delete('/deleteReport', async (req, res) => {
     // #swagger.tags = ['Report']
     // #swagger.summary = 'Delete a report by date'
     // #swagger.description = 'Delete a report searching by the date of creation.'
     // #swagger.parameters['date'] = { description: 'Date that report was created.', required: true}
-    res.send(reportService.deleteReport(req.query).catch(err => {
+    res.send(await reportService.deleteReport(req.query).catch(err => {
         console.log('An error ocourred, sorry!', err);
     }));
 });
 
-controller.put('/updateReport', (req, res) => {
+controller.put('/updateReport', async (req, res) => {
     // #swagger.tags = ['Report']
     // #swagger.summary = 'Update any report information in the database.'
     // #swagger.description = 'Update any report information in the database searching the especific report by date.'
@@ -59,7 +59,7 @@ controller.put('/updateReport', (req, res) => {
         required: true,
         schema: { $ref: "#/definitions/report"}
     }*/
-    res.send(reportService.updateReport(req.query, req.body).catch(err => {
+    res.send(await reportService.updateReport(req.query, req.body).catch(err => {
         console.log('An error ocourred, sorry!', err);
     }));
 });
